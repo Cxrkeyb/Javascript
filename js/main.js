@@ -1,12 +1,37 @@
-let nombre = prompt('Ingrese su nombre');
-let apellido = prompt('Ingrese su apellido');
-let edad = prompt('¿Cuál es tú edad?');
-let animal = prompt('¿Cuál es tú animal favorito?')
+let edad = prompt('¿Cuantos años tienes?');
+let mayoria = parseInt(edad);
+let fruta = prompt ('¿Qué fruta prefieres manzana o pera?');
+let numero = prompt('Escribe un número');
+let numint = parseInt(numero);
+let saludo = prompt('Escribe "hola"');
 
-let fechaDeNacimiento = parseInt(edad);
+if (mayoria >= 18){
+    alert('Eres mayor de edad. Tú edad es ' + mayoria);
+}
+else if(mayoria < 18){
+    alert('Eres menor de edad. Tú edad es ' + mayoria);
+}
+else{
+    alert('No escribiste tú edad.');
+}
 
+if (fruta == 'manzana'){
+    alert('Prefieres la ' + fruta);
+}
+else if(fruta == 'pera'){
+    alert('Prefieres la ' + fruta);
+}
+else{
+    alert('No escribiste la fruta.');
+}
 
-console.log('Bienvenido ',nombre, apellido);
-console.log('Tú fecha de nacimiento fue en ' + (2021 - fechaDeNacimiento) + ' ' + 'y tienes ' + edad + ' años');
-console.log('Tú animal favorito es el/la ' + animal)
-console.log('Dentro de 10 años tendrás ' + (fechaDeNacimiento + 10) + ' años')
+if((numint >= 10) && (numint < 50)){
+    alert('El número está entre el 10 y el 50.');
+}
+
+if(saludo == 'hola'){
+    alert('Escribiste hola');
+}
+else{
+    console.log('No escribiste hola.');
+}

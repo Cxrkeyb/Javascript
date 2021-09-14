@@ -1,2 +1,6 @@
 body {
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); }
+
+.indexClases {
+  display: flex;
+  flex-direction: column; }

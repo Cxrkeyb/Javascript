@@ -205,7 +205,7 @@ function desafio4store(){
 }
 function desafio4fee(){
     let price = parseInt(prompt('Type the amount of the product.'));
-    let monthfee = parseFloat(prompt('Type the fee for the quota. (1% = 0.01)'));
+    let monthfee = (parseInt(prompt('Type the fee for the quota. (Type 1 = 1%)'))/100);
     let monthquantity = parseInt(prompt('Type the amount of months.'));
     const addition = (a,b) => a + b;
     const iva = (a,b) => a*monthfee;
@@ -213,14 +213,14 @@ function desafio4fee(){
     for(i = 0; i <= monthquantity; i++){
         price = addition(price,iva(price));
     }
-    console.log('The amount final of all the quotas ' + price);
+    console.log('The amount final of all the quotas ' + parseInt(price));
 }
 function desafio4discount(){
     const iva = (a,b) => a*0.21;
     const addition = (a,b) => a + b;
     const substraction = (a,b) => a - b;
     let price = parseInt(prompt('Type the product price.'));
-    let discount = parseFloat(prompt('Type the discount. (1% = 0.01)'));
+    let discount = (parseInt(prompt('Type the discount. (Type 1 = 1%)'))/100);
     const priceDiscounted = (a,b) => a * discount;
     price = addition(price,iva(substraction(price,(priceDiscounted(price)))));
     console.log('The final price with iva and discounts are ' + price)

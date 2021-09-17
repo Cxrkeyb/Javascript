@@ -225,3 +225,30 @@ function desafio4discount(){
     price = addition(price,iva(substraction(price,(priceDiscounted(price)))));
     console.log('The final price with iva and discounts are ' + price)
 }
+function desafio4iva(){
+    let price = parseInt(prompt('Type the amount of the product.'));
+    const iva = (a,b) => a*0.21;
+    const addition = (a,b) => a+b;
+
+    price = addition(price, iva(price));
+    console.log('The price with the Iva is ' + price);
+}
+function desafio4multiple(){
+    let nmultiple = parseInt(prompt('Type the number you want to be the multiple'));
+    let nverify = parseInt(prompt('Type the number you want to be the verify'));
+    function multiple(a, b) {
+        if (Number.isInteger(b / a)) {
+          return 'its multiple';
+        }
+        return 'its not multiple';
+      }
+    console.log(multiple(nverify,nmultiple));
+}
+function desafio4wavef(){
+    let velocity = parseFloat(prompt('Type the velocity in m/s'));
+    let lenght = parseFloat(prompt('Type the wave lenght in m'));
+    const divide = (a,b) => a / b;
+
+    frecuency = divide(velocity, lenght);
+    console.log('The frecuency is ' + frecuency +' Hz')
+}

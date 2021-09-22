@@ -252,3 +252,60 @@ function desafio4wavef(){
     frecuency = divide(velocity, lenght);
     console.log('The frecuency is ' + frecuency +' Hz')
 }
+function desafio5KD(){
+    class Object {
+        constructor(user,kills, deaths){
+            this.user = user;
+            this.kills = Number(kills);
+            this.deaths = Number(deaths);
+        }
+        get product(){
+            return this.user;
+        }
+        get KD(){
+            return (this.kills/this.deaths);
+        }
+        userInfo(){
+            return `The KD of ${this.user} is ${this.KD}`;
+        }
+    }
+    const user = new Object(prompt('Type the user.'),prompt('Type the quantity total of kills'),prompt('Type the quantity total of deaths'));
+
+    console.log(user.userInfo());
+}
+function desafio5Average(){
+    let totalgrades = 3;
+    class schoolgrades{
+        constructor(student,grade1,grade2,grade3,gradepass){
+            this.student = student;
+            this.grade1 = Number(grade1);
+            this.grade2 = Number(grade2);
+            this.grade3 = Number(grade3);
+            this.gradepass = Number(gradepass);
+        }
+        get nameStudent(){
+            return this.student;
+        }
+        get average(){
+            return ((this.grade1+this.grade2+this.grade3)/totalgrades).toFixed(2);
+        }
+        getAverage(){
+            if (this.average < this.gradepass){
+                return `The student ${this.student} approved, the course`
+            }
+            else{
+                return `The student ${this.student} approved the course, his average was ${this.average}`
+            }
+        }
+    }
+    const quantityOfStudents = 3;
+    const student=[];
+    let gradepass = prompt('Grade to approve the course');
+    for(i = 1; i <= quantityOfStudents; i++){
+        student[i] = new schoolgrades(prompt('Type the name of the student.'),prompt('Type the first grade'),prompt('Type the second grade.'),prompt('Type the third grade'));
+    }
+    alert('The condition of the students are:'
+            + '\n' + student[1].getAverage()
+            + '\n' + student[2].getAverage()
+            + '\n' + student[3].getAverage());
+}

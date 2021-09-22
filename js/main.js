@@ -276,12 +276,11 @@ function desafio5KD(){
 function desafio5Average(){
     let totalgrades = 3;
     class schoolgrades{
-        constructor(student,grade1,grade2,grade3,gradepass){
+        constructor(student,grade1,grade2,grade3){
             this.student = student;
             this.grade1 = Number(grade1);
             this.grade2 = Number(grade2);
             this.grade3 = Number(grade3);
-            this.gradepass = Number(gradepass);
         }
         get nameStudent(){
             return this.student;
@@ -290,17 +289,17 @@ function desafio5Average(){
             return ((this.grade1+this.grade2+this.grade3)/totalgrades).toFixed(2);
         }
         getAverage(){
-            if (this.average < this.gradepass){
-                return `The student ${this.student} approved, the course`
+            if (this.average > gradepass){
+                return `The student ${this.student} approved, the course, his average was ${this.average}`
             }
             else{
-                return `The student ${this.student} approved the course, his average was ${this.average}`
+                return `The student ${this.student} reprobate the course, his average was ${this.average}`
             }
         }
     }
     const quantityOfStudents = 3;
     const student=[];
-    let gradepass = prompt('Grade to approve the course');
+    const gradepass = prompt('Grade to approve the course');
     for(i = 1; i <= quantityOfStudents; i++){
         student[i] = new schoolgrades(prompt('Type the name of the student.'),prompt('Type the first grade'),prompt('Type the second grade.'),prompt('Type the third grade'));
     }

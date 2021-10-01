@@ -410,3 +410,17 @@ function firstfinalproyect(){
             console.log("You did not select any operation")
     }
 }
+function desafio7(){
+    let nombre = prompt("Escribe tú nombre.")
+    let parrafo = document.createElement("p");
+    let price = parseInt(prompt('Escribe el precio del prestamo.'));
+    let monthfee = (parseInt(prompt('Escribe la tasa de interés. (Escribe 1 para 1%)')) / 100);
+    let monthquantity = parseInt(prompt('Escribe la cantidad de meses a pagar.'));
+    const addition = (a, b) => a + b;
+    const iva = (a, b) => a * monthfee;
+    for (i = 0; i <= monthquantity; i++) {
+        price = addition(price, iva(price));
+    }
+    parrafo.innerHTML = `<p>Hola ${nombre} el precio del producto con iva es ${parseInt(price)} pesos argentinos<p>`
+    document.body.appendChild(parrafo);
+}

@@ -424,3 +424,32 @@ function desafio7(){
     parrafo.innerHTML = `<p>Hola ${nombre} el precio del producto con iva es ${parseInt(price)} pesos argentinos<p>`
     document.body.appendChild(parrafo);
 }
+
+    // let nombre = document.getElementById("nombre");
+    // let parrafo = document.createElement("p");
+    // let price = parseInt(document.getElementById("cantidad"));
+    // let monthfee = (parseInt(document.getElementById("interes")) / 100);
+    // let monthquantity = parseInt(document.getElementById("meses"));
+    let prestamoFormulario = document.getElementById("prestamoF")
+    let parrafo = document.createElement("p");
+    prestamoFormulario.addEventListener("submit", prestamoCalcular);
+    // Quitamos la longitud de 5 para poder quitar el enviar y empezar desde el punto 0 y terminar en el cuadro 3 (Nombre, cantidad, interes, cantidad de meses)
+    const childrensForm = prestamoFormulario.children.length - 2;
+    console.log(childrensForm);
+    function prestamoCalcular(e){
+        const dato = [];
+        e.preventDefault();
+        for(i = 0; i <= childrensForm; i++){
+            dato[i] = prestamoFormulario.children[i].value;
+            console.log(dato);
+        }
+        const addition = (a, b) => a + b;
+        const iva = (a, b) => a * dato[2];
+        for (i = 0; i <= dato[3]; i++) {
+            parseFloat(dato[1]) = addition(parseFloat(dato[1]), iva(parseInt(dato[2])));
+        }
+        parrafo.innerHTML = `<p>Hola ${dato[0]} el precio del producto con iva es ${parseInt(dato[1])} pesos argentinos<p>`
+        document.body.appendChild(parrafo);
+
+    }
+

@@ -424,32 +424,66 @@ function desafio7(){
     parrafo.innerHTML = `<p>Hola ${nombre} el precio del producto con iva es ${parseInt(price)} pesos argentinos<p>`
     document.body.appendChild(parrafo);
 }
+// DESAFIO CLASE 9
+// Obtener valores del html
+let numero2 = document.getElementById("valor2");
+let btn_suma = document.getElementById("suma");
+let btn_resta = document.getElementById("resta");
+let btn_multiplicar = document.getElementById("multiplicar");
+let btn_dividir = document.getElementById("dividir");
+let parrafo = document.createElement("p");
 
-    // let nombre = document.getElementById("nombre");
-    // let parrafo = document.createElement("p");
-    // let price = parseInt(document.getElementById("cantidad"));
-    // let monthfee = (parseInt(document.getElementById("interes")) / 100);
-    // let monthquantity = parseInt(document.getElementById("meses"));
-    let prestamoFormulario = document.getElementById("prestamoF")
-    let parrafo = document.createElement("p");
-    prestamoFormulario.addEventListener("submit", prestamoCalcular);
-    // Quitamos la longitud de 5 para poder quitar el enviar y empezar desde el punto 0 y terminar en el cuadro 3 (Nombre, cantidad, interes, cantidad de meses)
-    const childrensForm = prestamoFormulario.children.length - 2;
-    console.log(childrensForm);
-    function prestamoCalcular(e){
-        const dato = [];
-        e.preventDefault();
-        for(i = 0; i <= childrensForm; i++){
-            dato[i] = prestamoFormulario.children[i].value;
-            console.log(dato);
-        }
-        const addition = (a, b) => a + b;
-        const iva = (a, b) => a * dato[2];
-        for (i = 0; i <= dato[3]; i++) {
-            parseFloat(dato[1]) = addition(parseFloat(dato[1]), iva(parseInt(dato[2])));
-        }
-        parrafo.innerHTML = `<p>Hola ${dato[0]} el precio del producto con iva es ${parseInt(dato[1])} pesos argentinos<p>`
-        document.body.appendChild(parrafo);
+//  Enter funcionando, no entiendo porque cuando tengo el enter así no me deja escribir solo con las flechitas del form
+// function enter(e){
+//     e.preventDefault();
+//     if (e.keyCode == 13)
+//     parrafo.innerHTML = `<p>No seleccionaste ninguna operación<p>`
+//     document.body.appendChild(parrafo);;
+// }
+// window.onkeydown = enter;
+//Funciones de los botones
+function suma(){
+    let numero1 = parseFloat(document.getElementById("valor1").value)
+    let numero2 = parseFloat(document.getElementById("valor2").value)
+    let total = numero1 + numero2;
+    parrafo.innerHTML = `<p>Bienvenido el primer número que digitó es ${numero1} y el segundo número es ${numero2}, el resultado de la operación es ${total}<p>`
+    document.body.appendChild(parrafo);
+}
+function resta(){
+    let numero1 = parseFloat(document.getElementById("valor1").value)
+    let numero2 = parseFloat(document.getElementById("valor2").value)
+    let total = numero1 - numero2;
+    parrafo.innerHTML = `<p>Bienvenido el primer número que digitó es ${numero1} y el segundo número es ${numero2}, el resultado de la operación es ${total}<p>`
+    document.body.appendChild(parrafo);
+}
 
-    }
+function multiplicar(){
+    let numero1 = parseFloat(document.getElementById("valor1").value)
+    let numero2 = parseFloat(document.getElementById("valor2").value)
+    let total = numero1 * numero2;
+    parrafo.innerHTML = `<p>Bienvenido el primer número que digitó es ${numero1} y el segundo número es ${numero2}, el resultado de la operación es ${total}<p>`
+    document.body.appendChild(parrafo);
+}
+function dividir(){
+    let numero1 = parseFloat(document.getElementById("valor1").value)
+    let numero2 = parseFloat(document.getElementById("valor2").value)
+    let total = numero1 / numero2;
+    parrafo.innerHTML = `<p>Bienvenido el primer número que digitó es ${numero1} y el segundo número es ${numero2}, el resultado de la operación es ${total}<p>`
+    document.body.appendChild(parrafo);
+}
 
+// DESAFIO COMPLEMENTARIO
+// Obtener valores del HTML
+let addtp = document.getElementById("addtp");
+let titulopubhtml = document.createElement("h2");
+let parrafopubhtml = document.createElement("p");
+
+
+function addTandP(e){
+    let titulopub = document.getElementById("titulopub").value;
+    let parrafopub = document.getElementById("parrafopub").value;
+    titulopubhtml.innerHTML = `<h2>${titulopub}</h2>`
+    parrafopubhtml.innerHTML = `<p>${parrafopub}</p>`
+    document.body.appendChild(titulopubhtml);
+    document.body.appendChild(parrafopubhtml);
+}

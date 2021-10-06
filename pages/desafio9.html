@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/style.css" rel="stylesheet" title="Main Style">
-    <title>Desafio 9</title>
-</head>
-<body>
-    <form class="indexClases" id="prestamoF">
-        <input type="text" placeholder="Escribe tu nombre" id="nombre">
-        <input type="text" placeholder="Escribe la cantidad del prestamo" id="cantidad">
-        <input type="text" placeholder="Escribe el porcentaje de interés (1=1%)" id="interes">
-        <input type="text" placeholder="Escribe los meses a pagar" id="meses">
-        <input type="submit" value="Enviar">
-    </form>
     <script src="../js/main.js">
     </script>
+    <title>Desafio 9</title>
+</head>
+
+<body>
+    <form class="indexClases" id="calculadora" method="post">
+        <input type="number" placeholder="Escribe el primer número" id="valor1">
+        <input type="number" placeholder="Escribe el segundo número" id="valor2">
+        <button type="button" onclick="suma();">Sumar</button>
+        <button type="button" onclick="resta();">Restar</button>
+        <button type="button" onclick="multiplicar();">Multiplicar</button>
+        <button type="button" onclick="dividir();">Dividir</button>
+    </form>
+    <form id="publicaciones">
+        <input type="text" placeholder="Escribe el titulo" id="titulopub">
+        <input type="text" placeholder="Escribe el parrafo" id="parrafopub">
+        <button type="button" onclick="addTandP();">Añadir</button>
+    </form>
 </body>
+</body>
+
 </html>

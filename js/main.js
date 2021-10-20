@@ -477,7 +477,7 @@ function dividir(){
 let addtp = document.getElementById("addtp");
 let titulopubhtml = document.createElement("h2");
 let parrafopubhtml = document.createElement("p");
-
+ 
 
 function addTandP(e){
     let titulopub = document.getElementById("titulopub").value;

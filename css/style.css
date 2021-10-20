@@ -1,6 +1,30 @@
 body {
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); }
 
-.indexClases {
+.indexdesafios{
   display: flex;
-  flex-direction: column; }
+  flex-direction: column; 
+  background-color: gray;
+  color: black;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+a{
+  color: black;
+  text-decoration: none;
+  height: 20px;
+  border: 1px solid black;
+  background-color: white;
+}
+.yellowSquare{
+  height: 100px;
+  width: 100%;
+  background-color: yellow;
+}
+#center{
+  display: flex;
+  justify-content: center;
+}
